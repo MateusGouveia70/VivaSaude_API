@@ -11,6 +11,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VivaSaude.Application.Repositories;
+using VivaSaude.Application.Repositories.UserService;
+using VivaSaude.Infrastructure.Persistence;
 
 namespace VivaSaude.API
 {
@@ -26,6 +29,9 @@ namespace VivaSaude.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<VivaSaudeDbContext>();
+
+            services.AddScoped<IUserService, UserService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

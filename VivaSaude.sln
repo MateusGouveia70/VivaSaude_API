@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VivaSaude.API", "VivaSaude.API\VivaSaude.API.csproj", "{0AA3D838-5933-4B25-A850-683D265C27D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VivaSaude.API", "VivaSaude.API\VivaSaude.API.csproj", "{0AA3D838-5933-4B25-A850-683D265C27D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VivaSaude.Application", "VivaSaude.Application\VivaSaude.Application.csproj", "{181E6822-0542-4CCE-B8FF-92BB41B41716}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VivaSaude.Application", "VivaSaude.Application\VivaSaude.Application.csproj", "{181E6822-0542-4CCE-B8FF-92BB41B41716}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VivaSaude.Core", "VivaSaude.Core\VivaSaude.Core.csproj", "{B3247CA8-F173-4F48-8DA3-C00904FFC320}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VivaSaude.Core", "VivaSaude.Core\VivaSaude.Core.csproj", "{B3247CA8-F173-4F48-8DA3-C00904FFC320}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VivaSaude.Infrastructure", "VivaSaude.Infrastructure\VivaSaude.Infrastructure.csproj", "{8525B958-D910-48A2-9A50-C16AD14DB911}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VivaSaude.Infrastructure", "VivaSaude.Infrastructure\VivaSaude.Infrastructure.csproj", "{8525B958-D910-48A2-9A50-C16AD14DB911}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

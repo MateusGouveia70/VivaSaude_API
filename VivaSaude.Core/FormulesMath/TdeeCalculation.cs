@@ -19,3 +19,6 @@ namespace VivaSaude.Core.FormulesMath
         }
     }
 }
+
+
+    

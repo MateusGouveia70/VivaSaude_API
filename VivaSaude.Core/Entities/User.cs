@@ -19,6 +19,7 @@ namespace VivaSaude.Core.Entities
             Altura = altura;
             Genero = genero;
             NivelAtividade = nivelAtividade;
+            UserStatus = EnumUserStatus.Ativo;
 
             Imc = ImcCalculation.ImcCalc(Peso, Altura);
             SetImcStatus();
@@ -36,7 +37,21 @@ namespace VivaSaude.Core.Entities
         public EnumGenero Genero { get; private set; }
         public EnumNivelAtividade NivelAtividade { get; private set; }
         public EnumImcStatus ImcStatus { get; private set; }
-        
+        public EnumUserStatus UserStatus { get; private set; }
+
+
+        public void Update(int idade, double peso, double altura, EnumNivelAtividade nivelAtividade)
+        {
+            Idade = idade;
+            Peso = peso;
+            Altura = altura;
+            NivelAtividade = nivelAtividade;
+        }
+
+        public void Delete()
+        {
+            UserStatus = EnumUserStatus.Inativo;
+        }
 
         public void SetImcStatus() 
         {
