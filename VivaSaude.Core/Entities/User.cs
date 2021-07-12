@@ -24,6 +24,7 @@ namespace VivaSaude.Core.Entities
             Imc = ImcCalculation.ImcCalc(Peso, Altura);
             SetImcStatus();
             Tdee = TdeeCalc(Peso, Altura, Idade);
+            UserStatus = EnumUserStatus.Ativo;
            
         }
 

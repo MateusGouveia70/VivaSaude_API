@@ -52,7 +52,7 @@ namespace VivaSaude.API.Controllers
             return CreatedAtAction(nameof(FindById), new { id = user }, model);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut]
         public IActionResult UpdateUser([FromBody] UpdateUserInputModel model)
         {
             _useService.UpdateUser(model);

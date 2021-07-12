@@ -49,7 +49,8 @@ namespace VivaSaude.Application.Repositories.UserService
                 user.Tdee.ToString("F2", CultureInfo.InvariantCulture),
                 EnumDescription.GetEnumDescription(user.Genero),
                 EnumDescription.GetEnumDescription(user.NivelAtividade),
-                EnumDescription.GetEnumDescription(user.ImcStatus)
+                EnumDescription.GetEnumDescription(user.ImcStatus),
+                EnumDescription.GetEnumDescription(user.UserStatus)
                 );
 
             return userView; 
