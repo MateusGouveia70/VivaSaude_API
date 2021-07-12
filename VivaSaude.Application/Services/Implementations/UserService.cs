@@ -9,6 +9,7 @@ using VivaSaude.Application.ViewModels;
 using VivaSaude.Core.Entities;
 using VivaSaude.Infrastructure.Persistence;
 
+
 namespace VivaSaude.Application.Repositories.UserService
 {
     public class UserService : IUserService
@@ -46,9 +47,9 @@ namespace VivaSaude.Application.Repositories.UserService
                 user.Altura.ToString("F2", CultureInfo.InvariantCulture),
                 user.Imc.ToString("F2", CultureInfo.InvariantCulture),
                 user.Tdee.ToString("F2", CultureInfo.InvariantCulture),
-                user.Genero,
-                user.NivelAtividade,
-                user.ImcStatus
+                EnumDescription.GetEnumDescription(user.Genero),
+                EnumDescription.GetEnumDescription(user.NivelAtividade),
+                EnumDescription.GetEnumDescription(user.ImcStatus)
                 );
 
             return userView; 

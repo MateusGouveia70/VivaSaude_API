@@ -16,7 +16,7 @@ namespace VivaSaude.Core.Entities
             Nome = nome;
             Idade = idade;
             Peso = peso;
-            Altura = altura / 100;
+            Altura = altura / 100; // Metros para Cm
             Genero = genero;
             NivelAtividade = nivelAtividade;
             UserStatus = EnumUserStatus.Ativo;
@@ -91,7 +91,7 @@ namespace VivaSaude.Core.Entities
             {
                 return TdeeCalculation.TmbFeminino(peso, altura, idade) * ActivityFator();
             }
-            else if(Genero == EnumGenero.Masculino)
+            else if(Genero == EnumGenero.Masculino) 
             {
                 return TdeeCalculation.TmbMasculino(peso, altura, idade) * ActivityFator();
             }

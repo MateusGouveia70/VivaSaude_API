@@ -10,12 +10,12 @@ namespace VivaSaude.Core.FormulesMath
     {
         public static double TmbFeminino(double peso, double altura, int idade)
         {
-            return 655 + (9.6 * peso) + (1.8 * (altura * 100)) - (4.7 * idade);
+            return 655 + (9.6 * peso) + (1.8 * (altura * 100)) - (4.7 * idade);  // Altura é calculada em metros
         }
         
         public static double TmbMasculino(double peso, double altura, int idade)
         {
-            return 66 + (13.7 * peso) + (5.0 * (altura * 100)) - (6.8 * idade);
+            return 66 + (13.7 * peso) + (5.0 * (altura * 100)) - (6.8 * idade); 
         }
     }
 }
