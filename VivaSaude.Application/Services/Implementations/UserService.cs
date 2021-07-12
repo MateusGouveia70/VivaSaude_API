@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,8 +27,8 @@ namespace VivaSaude.Application.Repositories.UserService
                     u.Id,
                     u.Nome,
                     u.Idade,
-                    u.Peso.ToString("F2"),
-                    u.Altura.ToString("F2"))).ToList();
+                    u.Peso.ToString("F2", CultureInfo.InvariantCulture),
+                    u.Altura.ToString("F2", CultureInfo.InvariantCulture))).ToList();
 
             return userView;
                
@@ -41,10 +42,10 @@ namespace VivaSaude.Application.Repositories.UserService
                 user.Id,
                 user.Nome,
                 user.Idade,
-                user.Peso.ToString("F2"),
-                user.Altura.ToString("F2"),
-                user.Imc.ToString("F2"),
-                user.Tdee.ToString("F2"),
+                user.Peso.ToString("F2", CultureInfo.InvariantCulture),
+                user.Altura.ToString("F2", CultureInfo.InvariantCulture),
+                user.Imc.ToString("F2", CultureInfo.InvariantCulture),
+                user.Tdee.ToString("F2", CultureInfo.InvariantCulture),
                 user.Genero,
                 user.NivelAtividade,
                 user.ImcStatus

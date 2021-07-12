@@ -8,10 +8,10 @@ namespace VivaSaude.Core.Enums
 {
     public enum EnumNivelAtividade
     {
-        Sedentario = 1,
-        Leve = 2,
-        Moderado = 3,
-        Intenso = 4,
-        MuitoIntenso = 5
+        Sedentario = 0,
+        Leve = 1,
+        Moderado = 2,
+        Intenso = 3,
+        MuitoIntenso = 4
     }
 }

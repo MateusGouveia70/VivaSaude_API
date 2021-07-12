@@ -24,6 +24,8 @@ namespace VivaSaude.API.Controllers
         {
             var users = _useService.FindAll(query);
 
+            if (users == null) return NotFound();
+
             return Ok(users);
         }
 
@@ -40,6 +42,11 @@ namespace VivaSaude.API.Controllers
         [HttpPost]
         public IActionResult CreateUser([FromBody] UserInputModel model)
         {
+            if(model.Nome.Length > 100) // Depois aplicar o fluent validation
+            {
+                return BadRequest();
+            }
+
             var user = _useService.CreateUser(model); // Retorna o Id para ser usado no CreatedAtAction 
 
             return CreatedAtAction(nameof(FindById), new { id = user }, model);
@@ -49,6 +56,7 @@ namespace VivaSaude.API.Controllers
         public IActionResult UpdateUser([FromBody] UpdateUserInputModel model)
         {
             _useService.UpdateUser(model);
+            
             return NoContent();
         }
 

@@ -33,5 +33,7 @@ namespace VivaSaude.Application.ViewModels
         public EnumGenero Genero { get; private set; }
         public EnumNivelAtividade NivelAtividade { get; private set; }
         public EnumImcStatus ImcStatus { get; private set; }
+        public EnumUserStatus UserStatus { get; set; } 
     }
 }
+ 

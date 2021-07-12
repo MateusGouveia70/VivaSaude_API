@@ -16,7 +16,7 @@ namespace VivaSaude.Core.Entities
             Nome = nome;
             Idade = idade;
             Peso = peso;
-            Altura = altura;
+            Altura = altura / 100;
             Genero = genero;
             NivelAtividade = nivelAtividade;
             UserStatus = EnumUserStatus.Ativo;
@@ -89,16 +89,48 @@ namespace VivaSaude.Core.Entities
         {
             if(Genero == EnumGenero.Feminino)
             {
-                return TdeeCalculation.TmbFeminino(peso, altura, idade);
+                return TdeeCalculation.TmbFeminino(peso, altura, idade) * ActivityFator();
             }
             else if(Genero == EnumGenero.Masculino)
             {
-                return TdeeCalculation.TmbMasculino(peso, altura, idade);
+                return TdeeCalculation.TmbMasculino(peso, altura, idade) * ActivityFator();
             }
             else
             {
                 return 0;
             }
+        }
+
+        public double ActivityFator()
+        {
+            double factor = 0;
+
+            if(NivelAtividade == EnumNivelAtividade.Sedentario)
+            {
+                factor = 1.2;
+            }
+
+            else if(NivelAtividade == EnumNivelAtividade.Leve)
+            {
+                factor = 1.375;
+            }
+
+            else if(NivelAtividade == EnumNivelAtividade.Moderado)
+            {
+                factor = 1.55;
+            }
+
+            else if(NivelAtividade == EnumNivelAtividade.Intenso)
+            {
+                factor = 1.725;
+            }
+
+            else if(NivelAtividade == EnumNivelAtividade.MuitoIntenso)
+            {
+                factor = 1.9;
+            }
+
+            return factor;
         }
     }
 }
