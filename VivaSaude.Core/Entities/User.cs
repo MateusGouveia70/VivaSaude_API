@@ -10,9 +10,8 @@ namespace VivaSaude.Core.Entities
 {
     public class User
     {
-        public User(int id, string nome, int idade, double peso, double altura, EnumGenero genero, EnumNivelAtividade nivelAtividade)
+        public User(string nome, int idade, double peso, double altura, EnumGenero genero, EnumNivelAtividade nivelAtividade)
         {
-            Id = id;
             Nome = nome;
             Idade = idade;
             Peso = peso;

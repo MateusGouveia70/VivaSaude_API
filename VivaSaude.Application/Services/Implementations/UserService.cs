@@ -59,7 +59,6 @@ namespace VivaSaude.Application.Repositories.UserService
         public int CreateUser(UserInputModel model)
         {
             var user = new User(
-                model.Id,
                 model.Nome,
                 model.Idade,
                 model.Peso,

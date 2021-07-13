@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,20 +9,14 @@ using VivaSaude.Core.Enums;
 
 namespace VivaSaude.Infrastructure.Persistence
 {
-    public class VivaSaudeDbContext
+    public class VivaSaudeDbContext : DbContext
     {
-        public VivaSaudeDbContext()
+        public VivaSaudeDbContext(DbContextOptions<VivaSaudeDbContext> options) : base(options)
         {
-            Users = new List<User>
-            {
-                new User(1, "Mateus", 27, 100, 176, EnumGenero.Masculino, EnumNivelAtividade.Leve),
-                new User(2, "She-Ra", 52, 100, 167, EnumGenero.Feminino, EnumNivelAtividade.Sedentario),
-                new User(3, "Marco", 19, 90, 177, EnumGenero.Masculino, EnumNivelAtividade.Sedentario),
-                new User(4, "Venceslau", 54, 82, 174, EnumGenero.Masculino, EnumNivelAtividade.Intenso)
-            };
+            
         }
 
 
-        public List<User> Users { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
