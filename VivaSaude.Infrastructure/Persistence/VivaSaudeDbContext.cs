@@ -23,6 +23,7 @@ namespace VivaSaude.Infrastructure.Persistence
         {
             model.Entity<User>()
                 .HasKey(u => u.Id);
+
              
 
         }

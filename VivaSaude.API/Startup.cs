@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,9 +13,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VivaSaude.API.Filters;
 using VivaSaude.Application.Repositories;
 using VivaSaude.Application.Repositories.UserService;
 using VivaSaude.Application.Services;
+using VivaSaude.Application.Validators;
 using VivaSaude.Core.Repository;
 using VivaSaude.Infrastructure.Persistence;
 using VivaSaude.Infrastructure.Persistence.Repository;
@@ -42,7 +45,8 @@ namespace VivaSaude.API
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserRepository, UserRepository>();
             
-            services.AddControllers();
+            services.AddControllers(options => options.Filters.Add(typeof(ValidationFilter)))
+                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<UserInputModelValidator>());
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "VivaSaude.API", Version = "v1" });

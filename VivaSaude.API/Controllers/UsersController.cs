@@ -44,10 +44,6 @@ namespace VivaSaude.API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateUser([FromBody] UserInputModel model)
         {
-            if(model.Nome.Length > 100) // Depois aplicar o fluent validation
-            {
-                return BadRequest();
-            }
 
             var user = await _useService.CreateUser(model); // Retorna o Id para ser usado no CreatedAtAction 
 
@@ -57,6 +53,7 @@ namespace VivaSaude.API.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdateUser([FromBody] UpdateUserInputModel model)
         {
+           
             await _useService.UpdateUser(model);
             
             return NoContent();

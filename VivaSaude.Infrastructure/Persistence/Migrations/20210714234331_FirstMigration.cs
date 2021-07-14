@@ -2,7 +2,7 @@
 
 namespace VivaSaude.Infrastructure.Persistence.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class FirstMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
