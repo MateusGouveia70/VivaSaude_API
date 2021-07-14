@@ -39,11 +39,9 @@ namespace VivaSaude.API
 
             services.AddDbContext<VivaSaudeDbContext>(options => options.UseSqlServer(connectionString));
 
-            services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
-           
-       
-
+            services.AddScoped<IUserRepository, UserRepository>();
+            
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

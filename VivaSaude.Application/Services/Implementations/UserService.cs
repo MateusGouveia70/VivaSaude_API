@@ -8,6 +8,7 @@ using VivaSaude.Application.InputModels;
 using VivaSaude.Application.Services;
 using VivaSaude.Application.ViewModels;
 using VivaSaude.Core.Entities;
+using VivaSaude.Core.Repository;
 using VivaSaude.Infrastructure.Persistence;
 using VivaSaude.Infrastructure.Persistence.Repository;
 
@@ -15,9 +16,9 @@ namespace VivaSaude.Application.Repositories.UserService
 {
     public class UserService : IUserService
     {
-        private readonly UserRepository _userRepository;
+        private readonly IUserRepository _userRepository;
 
-        public UserService(UserRepository userRepository)
+        public UserService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
         }
