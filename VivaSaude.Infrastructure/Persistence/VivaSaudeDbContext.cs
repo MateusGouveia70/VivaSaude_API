@@ -13,7 +13,7 @@ namespace VivaSaude.Infrastructure.Persistence
     {
         public VivaSaudeDbContext(DbContextOptions<VivaSaudeDbContext> options) : base(options)
         {
-            
+
         }
 
 
@@ -23,19 +23,8 @@ namespace VivaSaude.Infrastructure.Persistence
         {
             model.Entity<User>()
                 .HasKey(u => u.Id);
+             
 
-            model.Entity<User>()
-                .Property(u => u.Peso)
-                .HasMaxLength(300);
-
-            model.Entity<User>()
-                .Property(u => u.Imc)
-                .HasPrecision(2, 1);
-
-
-                
-                
-                
         }
     }
 }

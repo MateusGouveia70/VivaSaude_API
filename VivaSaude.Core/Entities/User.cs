@@ -15,7 +15,7 @@ namespace VivaSaude.Core.Entities
             Nome = nome;
             Idade = idade;
             Peso = peso;
-            Altura = altura / 100; // Metros para Cm
+            Altura = altura;
             Genero = genero;
             NivelAtividade = nivelAtividade;
             UserStatus = EnumUserStatus.Ativo;
@@ -44,7 +44,7 @@ namespace VivaSaude.Core.Entities
         {
             Idade = idade;
             Peso = peso;
-            Altura = altura / 100;
+            Altura = altura;
             NivelAtividade = nivelAtividade;
         }
 

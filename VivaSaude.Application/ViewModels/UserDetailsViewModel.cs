@@ -9,13 +9,13 @@ namespace VivaSaude.Application.ViewModels
 {
     public class UserDetailsViewModel
     {
-        public UserDetailsViewModel(int id, string nome, int idade, string peso, string altura, string imc, string tdee, string genero, string nivelAtividade, string imcStatus, string userStatus)
+        public UserDetailsViewModel(int id, string nome, int idade, double peso, double altura, string imc, string tdee, string genero, string nivelAtividade, string imcStatus, string userStatus)
         {
             Id = id;
             Nome = nome;
             Idade = idade;
             Peso = peso;
-            Altura = altura;
+            Altura = altura /100;
             Imc = imc;
             Tdee = tdee;
             Genero = genero;
@@ -27,8 +27,8 @@ namespace VivaSaude.Application.ViewModels
         public int Id { get; private set; }
         public string Nome { get; private set; }
         public int Idade { get; set; }
-        public string Peso { get; private set; }
-        public string Altura { get; private set; }
+        public double Peso { get; private set; }
+        public double Altura { get; private set; }
         public string Imc { get; private set; }
         public string Tdee { get; private set; }
         public string Genero { get; private set; }

@@ -10,7 +10,7 @@ namespace VivaSaude.Core.FormulesMath
     {
         public static double ImcCalc(double peso, double altura)
         {
-            return peso / Math.Pow(altura, 2);
+            return peso / Math.Pow((altura /100), 2);
         }
     }
 }

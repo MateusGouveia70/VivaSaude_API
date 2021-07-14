@@ -32,8 +32,8 @@ namespace VivaSaude.Application.Repositories.UserService
                     u.Id,
                     u.Nome,
                     u.Id,
-                    u.Peso.ToString("F2", CultureInfo.InvariantCulture),
-                    u.Altura.ToString("F2", CultureInfo.InvariantCulture))).ToList();
+                    u.Peso,
+                    u.Altura)).ToList();
 
             return  usersViewModels;
 
@@ -48,8 +48,8 @@ namespace VivaSaude.Application.Repositories.UserService
                 user.Id,
                 user.Nome,
                 user.Idade,
-                user.Peso.ToString("F2", CultureInfo.InvariantCulture),
-                user.Altura.ToString("F2", CultureInfo.InvariantCulture),
+                user.Peso,
+                user.Altura,
                 user.Imc.ToString("F2", CultureInfo.InvariantCulture),
                 user.Tdee.ToString("F2", CultureInfo.InvariantCulture),
                 EnumDescription.GetEnumDescription(user.Genero),

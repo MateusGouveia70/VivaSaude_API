@@ -8,23 +8,21 @@ namespace VivaSaude.Application.ViewModels
 {
     public class UserViewModel
     {
-        public UserViewModel(int id, string nome, int idade, string peso, string altura)
+        public UserViewModel(int id, string nome, int idade, double peso, double altura)
         {
             Id = id;
             Nome = nome;
             Idade = idade;
             Peso = peso;
-            Altura = altura;
+            Altura = altura / 100;
         }
 
         public int Id { get; private set; }
         public string Nome { get; private set; }
         public int Idade { get; private set; }
-        public string Peso { get; private set; }
-        public string Altura { get; private set; }
+        public double Peso { get; private set; }
+        public double Altura { get; private set; }
 
-
-        
 
     }
 }
