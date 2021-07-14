@@ -14,7 +14,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using VivaSaude.Application.Repositories;
 using VivaSaude.Application.Repositories.UserService;
+using VivaSaude.Application.Services;
+using VivaSaude.Core.Repository;
 using VivaSaude.Infrastructure.Persistence;
+using VivaSaude.Infrastructure.Persistence.Repository;
 
 namespace VivaSaude.API
 {
@@ -36,7 +39,10 @@ namespace VivaSaude.API
 
             services.AddDbContext<VivaSaudeDbContext>(options => options.UseSqlServer(connectionString));
 
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
+           
+       
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

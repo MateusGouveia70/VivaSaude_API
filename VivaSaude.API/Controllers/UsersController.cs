@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using VivaSaude.API.Models;
 using VivaSaude.Application.InputModels;
 using VivaSaude.Application.Repositories;
+using VivaSaude.Application.Repositories.UserService;
+using VivaSaude.Application.Services;
 
 namespace VivaSaude.API.Controllers
 {
@@ -20,9 +22,9 @@ namespace VivaSaude.API.Controllers
         }
 
         [HttpGet]
-        public IActionResult FindAll(string query)
+        public async Task<IActionResult> FindAll(string query)
         {
-            var users = _useService.FindAll(query);
+            var users = await _useService.FindAll(query);
 
             if (users == null) return NotFound();
 
@@ -30,9 +32,9 @@ namespace VivaSaude.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult FindById(int id)
+        public async Task<IActionResult> FindById(int id)
         {
-            var user = _useService.FindById(id);
+            var user = await _useService.FindById(id);
 
             if (user == null) return NotFound();
 
@@ -40,30 +42,30 @@ namespace VivaSaude.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateUser([FromBody] UserInputModel model)
+        public async Task<IActionResult> CreateUser([FromBody] UserInputModel model)
         {
             if(model.Nome.Length > 100) // Depois aplicar o fluent validation
             {
                 return BadRequest();
             }
 
-            var user = _useService.CreateUser(model); // Retorna o Id para ser usado no CreatedAtAction 
+            var user = await _useService.CreateUser(model); // Retorna o Id para ser usado no CreatedAtAction 
 
             return CreatedAtAction(nameof(FindById), new { id = user }, model);
         }
 
         [HttpPut]
-        public IActionResult UpdateUser([FromBody] UpdateUserInputModel model)
+        public async Task<IActionResult> UpdateUser([FromBody] UpdateUserInputModel model)
         {
-            _useService.UpdateUser(model);
+            await _useService.UpdateUser(model);
             
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            _useService.Delete(id);
+            await _useService.Delete(id);
 
             return NoContent();
         }

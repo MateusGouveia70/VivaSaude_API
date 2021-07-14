@@ -5,41 +5,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VivaSaude.Application.InputModels;
+using VivaSaude.Application.Services;
 using VivaSaude.Application.ViewModels;
 using VivaSaude.Core.Entities;
 using VivaSaude.Infrastructure.Persistence;
-
+using VivaSaude.Infrastructure.Persistence.Repository;
 
 namespace VivaSaude.Application.Repositories.UserService
 {
     public class UserService : IUserService
     {
-        private readonly VivaSaudeDbContext _dbContext;
+        private readonly UserRepository _userRepository;
 
-        public UserService(VivaSaudeDbContext dbContext)
+        public UserService(UserRepository userRepository)
         {
-            _dbContext = dbContext;
+            _userRepository = userRepository;
         }
 
-        public List<UserViewModel> FindAll(string query)
-        { 
-            var userView = _dbContext.Users
+        public async Task<List<UserViewModel>> FindAll(string query)
+        {
+            var userView = await _userRepository.FindAllAsync();
+
+            var usersViewModels = userView
                 .Select(u => new UserViewModel(
                     u.Id,
                     u.Nome,
-                    u.Idade,
+                    u.Id,
                     u.Peso.ToString("F2", CultureInfo.InvariantCulture),
                     u.Altura.ToString("F2", CultureInfo.InvariantCulture))).ToList();
 
-            return userView;
-               
+            return  usersViewModels;
+
+          
         }
 
-        public UserDetailsViewModel FindById(int id)
+        public async Task<UserDetailsViewModel> FindById(int id)
         {
-            var user = _dbContext.Users.SingleOrDefault(u => u.Id == id);
+            var user = await _userRepository.FindByIdAsync(id);
 
-            UserDetailsViewModel userView = new UserDetailsViewModel(
+            var userDetails = new UserDetailsViewModel(
                 user.Id,
                 user.Nome,
                 user.Idade,
@@ -51,12 +55,12 @@ namespace VivaSaude.Application.Repositories.UserService
                 EnumDescription.GetEnumDescription(user.NivelAtividade),
                 EnumDescription.GetEnumDescription(user.ImcStatus),
                 EnumDescription.GetEnumDescription(user.UserStatus)
-                );
+                );            
 
-            return userView; 
+            return userDetails; 
         }
 
-        public int CreateUser(UserInputModel model)
+        public async Task<int> CreateUser(UserInputModel model)
         {
             var user = new User(
                 model.Nome,
@@ -66,23 +70,29 @@ namespace VivaSaude.Application.Repositories.UserService
                 model.Genero,
                 model.NivelAtividade);
 
+            await _userRepository.CreateAsync(user);
+
             return user.Id;
         }
 
-        public void UpdateUser(UpdateUserInputModel model)
+        public async Task UpdateUser(UpdateUserInputModel model) 
         {
-            var user = _dbContext.Users.SingleOrDefault(u => u.Id == model.Id);
+            var user = await _userRepository.FindByIdAsync(model.Id);
 
 
-            user.Update(model.Idade, model.Altura, model.Altura, model.NivelAtividade);
+            user.Update(model.Idade, model.Peso, model.Altura, model.NivelAtividade);
+
+            await _userRepository.SaveChangesAsync();
 
         }
 
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            var user = _dbContext.Users.SingleOrDefault(u => u.Id == id);
+            var user = await _userRepository.FindByIdAsync(id);
 
             user.Delete();
+
+            await _userRepository.SaveChangesAsync();
         }
        
     }

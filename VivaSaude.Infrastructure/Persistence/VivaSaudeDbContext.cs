@@ -18,5 +18,24 @@ namespace VivaSaude.Infrastructure.Persistence
 
 
         public DbSet<User> Users { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder model)
+        {
+            model.Entity<User>()
+                .HasKey(u => u.Id);
+
+            model.Entity<User>()
+                .Property(u => u.Peso)
+                .HasMaxLength(300);
+
+            model.Entity<User>()
+                .Property(u => u.Imc)
+                .HasPrecision(2, 1);
+
+
+                
+                
+                
+        }
     }
 }

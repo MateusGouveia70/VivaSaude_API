@@ -5,16 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using VivaSaude.Application.InputModels;
 using VivaSaude.Application.ViewModels;
-using VivaSaude.Core.Entities;
 
-namespace VivaSaude.Application.Repositories
+namespace VivaSaude.Application.Services
 {
     public interface IUserService
     {
-        List<UserViewModel> FindAll(string query);
-        UserDetailsViewModel FindById(int id);
-        int CreateUser(UserInputModel model);
-        void UpdateUser(UpdateUserInputModel model);
-        void Delete(int id);
+        Task<List<UserViewModel>> FindAll(string query);
+        Task<UserDetailsViewModel> FindById(int id);
+        Task<int> CreateUser(UserInputModel model);
+        Task UpdateUser(UpdateUserInputModel model);
+        Task Delete(int id);
     }
 }

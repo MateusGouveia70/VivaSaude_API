@@ -9,7 +9,7 @@ namespace VivaSaude.Core.Enums
 {
     public enum EnumUserStatus
     {
-        [Description("Aitivo")]
+        [Description("Ativo")]
         Ativo = 0,
         [Description("Inativo")]
         Inativo = 1

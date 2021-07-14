@@ -44,7 +44,7 @@ namespace VivaSaude.Core.Entities
         {
             Idade = idade;
             Peso = peso;
-            Altura = altura;
+            Altura = altura / 100;
             NivelAtividade = nivelAtividade;
         }
 
