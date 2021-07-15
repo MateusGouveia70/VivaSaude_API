@@ -31,7 +31,7 @@ namespace VivaSaude.Application.Repositories.UserService
                 .Select(u => new UserViewModel(
                     u.Id,
                     u.Nome,
-                    u.Id,
+                    u.Idade,
                     u.Peso,
                     u.Altura)).ToList();
 
