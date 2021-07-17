@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VivaSaude.Application.Exceptions;
 using VivaSaude.Application.InputModels;
 using VivaSaude.Application.Services;
 using VivaSaude.Application.ViewModels;
@@ -44,6 +45,11 @@ namespace VivaSaude.Application.Repositories.UserService
         {
             var user = await _userRepository.FindByIdAsync(id);
 
+            if (user == null)
+            {
+                throw new usuarioNaoCadastrado();
+            }
+
             var userDetails = new UserDetailsViewModel(
                 user.Id,
                 user.Nome,
@@ -76,10 +82,14 @@ namespace VivaSaude.Application.Repositories.UserService
             return user.Id;
         }
 
-        public async Task UpdateUser(UpdateUserInputModel model) 
+        public async Task UpdateUser(int id, UpdateUserInputModel model) 
         {
-            var user = await _userRepository.FindByIdAsync(model.Id);
+            var user = await _userRepository.FindByIdAsync(id);
 
+            if (user == null)
+            {
+                throw new Exception("Usuário não cadastrado");
+            }
 
             user.Update(model.Idade, model.Peso, model.Altura, model.NivelAtividade);
 
@@ -90,6 +100,11 @@ namespace VivaSaude.Application.Repositories.UserService
         public async Task Delete(int id)
         {
             var user = await _userRepository.FindByIdAsync(id);
+
+            if (user == null)
+            {
+                throw new usuarioNaoCadastrado();
+            }
 
             user.Delete();
 

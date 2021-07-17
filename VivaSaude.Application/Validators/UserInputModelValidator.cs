@@ -45,14 +45,7 @@ namespace VivaSaude.Application.Validators
             var chars = new char[] { '.', ',' };
             var contains = altura.ToString().IndexOfAny(chars) >= 0; // Se achar . ou , retorna 0 ou 1 (Verdadeiro)
 
-            if (contains == false) // Se retornar false não contém . ou , 
-            {
-                return true;   // Lógica alterada para poder ser usada na validação .Must(AlturaValidation) se for true Ok
-            }
-            else
-            {
-                return false;
-            };
+            return !contains;
 
         }
     }

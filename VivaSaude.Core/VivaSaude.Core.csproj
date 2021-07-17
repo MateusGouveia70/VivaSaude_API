@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Excepition\" />
+    <Compile Remove="Excepition\**" />
+    <EmbeddedResource Remove="Excepition\**" />
+    <None Remove="Excepition\**" />
   </ItemGroup>
 
 </Project>

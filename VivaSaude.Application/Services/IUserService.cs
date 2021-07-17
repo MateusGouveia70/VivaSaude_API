@@ -13,7 +13,7 @@ namespace VivaSaude.Application.Services
         Task<List<UserViewModel>> FindAll(string query);
         Task<UserDetailsViewModel> FindById(int id);
         Task<int> CreateUser(UserInputModel model);
-        Task UpdateUser(UpdateUserInputModel model);
+        Task UpdateUser(int id,UpdateUserInputModel model);
         Task Delete(int id);
     }
 }
