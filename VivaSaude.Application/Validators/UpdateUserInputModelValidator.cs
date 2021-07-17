@@ -15,7 +15,7 @@ namespace VivaSaude.Application.Validators
             RuleFor(u => u.Idade)
               .GreaterThan(0)
               .LessThan(150)
-              .WithMessage("A idade ser maior que 0 e menor que 150 Anos");
+              .WithMessage("A idade deve ser maior que 0 e menor que 150 Anos");
 
             RuleFor(u => u.Peso)
                 .GreaterThan(0)
@@ -24,7 +24,7 @@ namespace VivaSaude.Application.Validators
 
             RuleFor(u => u.Altura)
                .Must(AlturaValidation)
-               .WithMessage("A altura não deve conter pontos ou vígulas");
+               .WithMessage("A altura não deve conter pontos ou vírgulas");
 
             RuleFor(u => u.Altura)
                 .GreaterThan(0)

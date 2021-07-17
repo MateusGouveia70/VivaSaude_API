@@ -18,7 +18,7 @@ namespace VivaSaude.API.Controllers
 
         public UsersController(IUserService useService)
         {
-            _useService = useService;
+            _useService = useService; 
         }
 
         /// <summary>

@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CloudService\" />
+    <Compile Remove="CloudService\**" />
+    <EmbeddedResource Remove="CloudService\**" />
+    <None Remove="CloudService\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Persistence\Repository\" />
   </ItemGroup>
 
