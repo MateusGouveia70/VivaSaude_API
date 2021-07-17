@@ -16,7 +16,7 @@
             <summary>
             Buscar um usuário pelo seu id
             </summary>
-            <param name="id">Id do usuário buscado</param>
+            <param name="id">Id do usuário buscado, um dos dados que irá retornar é o Tdee(gasto energético diário total)</param>
             <reponse code="200">Retorna usuário filtrado com detalhes</reponse>
             <reponse code="404">Retorna NotFound caso não haja usuário com este id</reponse>
             <returns></returns>

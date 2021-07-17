@@ -46,6 +46,9 @@ namespace VivaSaude.Core.Entities
             Peso = peso;
             Altura = altura;
             NivelAtividade = nivelAtividade;
+            Imc = ImcCalculation.ImcCalc(peso, altura);
+            SetImcStatus();
+            Tdee = TdeeCalc(peso, altura, Idade);
         }
 
         public void Delete()
@@ -89,11 +92,15 @@ namespace VivaSaude.Core.Entities
         {
             if(Genero == EnumGenero.Feminino)
             {
-                return TdeeCalculation.TmbFeminino(peso, altura, idade) * ActivityFator();
+                 var tdee = TdeeCalculation.TmbFeminino(peso, altura, idade) * ActivityFator();
+
+                return Math.Round(tdee, 2);
             }
             else if(Genero == EnumGenero.Masculino) 
             {
-                return TdeeCalculation.TmbMasculino(peso, altura, idade) * ActivityFator();
+                 var tdee = TdeeCalculation.TmbMasculino(peso, altura, idade) * ActivityFator();
+
+                return Math.Round(tdee, 2);
             }
             else
             {
