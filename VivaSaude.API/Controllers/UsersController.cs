@@ -17,7 +17,7 @@ namespace VivaSaude.API.Controllers
         }
 
         /// <summary>
-        /// Buscar todos os usuários cadastrados, para cada usuário, será retornando Nome, Idade, Peso e Altura.
+        /// Buscar todos os usuários cadastrados, para cada usuário, será retornado Nome, Idade, Peso e Altura.
         /// </summary>
         /// <param name="query"></param>
         /// <response code="200"> Retorna lista de usuários</response>
@@ -33,7 +33,7 @@ namespace VivaSaude.API.Controllers
         }
 
         /// <summary>
-        /// Buscar um usuário pelo seu id
+        /// Buscar um usuário por id
         /// </summary>
         /// <param name="id">Id do usuário buscado, um dos dados que irá retornar é o Tdee(gasto energético diário total)</param>
         /// <reponse code="200">Retorna usuário filtrado com detalhes</reponse>
