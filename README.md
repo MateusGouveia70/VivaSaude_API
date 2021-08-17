@@ -16,7 +16,11 @@ Essas informações servirão como base, para um profissional da área de saúde
 </ul>
 
 <p align="center">
-  <img width="100%" height="auto" src="VivaSaude.API/Assets/to_readme/CapturarApiVivaSaude.PNG">
+  <img width="100%" height="auto" src="VivaSaude.API/Assets/to_readme/vivaSaude1.PNG">
+</p>
+
+<p align="center">
+  <img width="100%" height="auto" src="VivaSaude.API/Assets/to_readme/vivaSaude2.PNG">
 </p>
 
 
