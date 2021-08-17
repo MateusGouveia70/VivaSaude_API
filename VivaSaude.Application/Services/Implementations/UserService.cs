@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using VivaSaude.Application.Exceptions;
 using VivaSaude.Application.InputModels;
@@ -10,8 +9,6 @@ using VivaSaude.Application.Services;
 using VivaSaude.Application.ViewModels;
 using VivaSaude.Core.Entities;
 using VivaSaude.Core.Repository;
-using VivaSaude.Infrastructure.Persistence;
-using VivaSaude.Infrastructure.Persistence.Repository;
 
 namespace VivaSaude.Application.Repositories.UserService
 {

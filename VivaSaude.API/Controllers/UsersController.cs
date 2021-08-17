@@ -1,12 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using VivaSaude.API.Models;
 using VivaSaude.Application.InputModels;
-using VivaSaude.Application.Repositories;
-using VivaSaude.Application.Repositories.UserService;
 using VivaSaude.Application.Services;
 
 namespace VivaSaude.API.Controllers

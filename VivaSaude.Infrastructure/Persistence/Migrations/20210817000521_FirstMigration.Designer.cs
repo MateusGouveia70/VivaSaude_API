@@ -9,7 +9,7 @@ using VivaSaude.Infrastructure.Persistence;
 namespace VivaSaude.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(VivaSaudeDbContext))]
-    [Migration("20210714234331_FirstMigration")]
+    [Migration("20210817000521_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
