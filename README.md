@@ -7,5 +7,9 @@ Com esses dados a API irá retornar todos os dados que foram cadastrados, junto 
 
 Essas informações servirão como base, para um profissional da área de saúde montar uma dieta baseada nos resultados fornecidos pela API.
 
+<p align="center">
+  <img width="100%" height="auto" src="VivaSaude.API/Assets/to_readme/CapturarApiVivaSaude.PNG">
+</p>
+
 
 
