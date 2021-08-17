@@ -7,5 +7,17 @@ Com esses dados a API irá retornar todos os dados que foram cadastrados, junto 
 
 Essas informações servirão como base, para um profissional da área de saúde montar uma dieta baseada nos resultados fornecidos pela API.
 
+## Funcionalidades
+<ul>
+  <li>Cadastrar e Atualizar usuário</li>
+  <li>Consultar todos os usuários cadastrados</li>
+  <li>Consultar usuário escecífico com detalhes</li>
+  <li>Mudar o status do usuário para inativo</li>
+</ul>
+
+<p align="center">
+  <img width="100%" height="auto" src="VivaSaude.API/Assets/to_readme/CapturarApiVivaSaude.PNG">
+</p>
+
 
 
